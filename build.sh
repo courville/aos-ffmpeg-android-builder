@@ -35,7 +35,7 @@ if [ -z ${NDK_PATH} ] || [ ! -d ${NDK_PATH} ] || [ ${NDK_PATH} == . ]; then
 fi
 
 if [ ! -d ffmpeg.git ]; then
-	git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg.git --bare --depth=1
+	git clone https://github.com/FFmpeg/FFmpeg.git ffmpeg.git --bare --depth=1
 	#git clone https://github.com/FFmpeg/FFmpeg.git ffmpeg.git --bare --depth=1 -b n3.3.3
 fi
 

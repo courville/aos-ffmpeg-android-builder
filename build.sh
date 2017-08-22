@@ -40,7 +40,8 @@ if [ ! -d ffmpeg.git ]; then
 fi
 
 FFMPEG_BARE_PATH=$(readlink -f ffmpeg.git)
-ANDROID_API=14
+# TODO must be 18 because otherwise error: undefined reference to 'log2f'
+ANDROID_API=18
 
 ARCH_CONFIG_OPT=
 
@@ -103,6 +104,8 @@ CROSS_PREFIX="${CROSS_DIR}/bin/${ARCH_TRIPLET}-"
 
 mkdir -p "${FFMPEG_DIR}/dist-${FLAVOR}-${ABI}"
 
+LDFLAGS="-L${LOCAL_PATH}/../libmysofa-android-builder/dist-${ABI}/lib" \
+CFLAGS="-I${LOCAL_PATH}/../libmysofa-android-builder/dist-${ABI}/include" \
 ./configure --cross-prefix="${CROSS_PREFIX}" \
             --cc="${CROSS_PREFIX}clang" \
             --as="${CROSS_PREFIX}gcc" \

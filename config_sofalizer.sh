@@ -1,0 +1,20 @@
+CONFIG_LIBAV="\
+	--disable-programs \
+	--disable-swresample \
+	--disable-swscale \
+	--enable-avfilter \
+	--enable-libmysofa \
+	--disable-avresample \
+	--disable-bzlib \
+	--disable-muxers \
+	--disable-bsfs \
+	--disable-avdevice \
+	--disable-devices \
+	--enable-filters \
+	--disable-encoders \
+	--enable-muxer=spdif \
+	--enable-protocols \
+	--enable-demuxers \
+	--enable-parsers \
+	--enable-decoders \
+	--disable-decoder=opus"
